@@ -13,7 +13,7 @@
 >
   <div
     id="upload-container"
-    class="mx-auto flex min-h-max w-4/5 flex-col rounded-2xl border-4 border-transparent bg-zinc-50 pb-4 opacity-90 md:h-4/5 lg:max-w-6xl xl:w-full"
+    class="mx-auto flex min-h-max w-4/5 flex-col rounded-2xl border-4 border-transparent bg-zinc-50 pb-4 opacity-95 md:h-4/5 lg:max-w-6xl xl:w-full"
   >
     <div id="upload-container-headers" class="mx-auto w-4/5 px-8 pt-8">
       <ul class="flex justify-evenly border-b-2 border-zinc-200 px-8">
@@ -47,7 +47,7 @@
         <label
           id="image-label"
           for="image"
-          class="py-21 text-secondary focus-within:ring-secondary group relative grid h-[340px] w-full cursor-pointer place-items-center rounded-xl border-2 border-dashed border-zinc-400 bg-white px-16 font-medium text-gray-700 transition-all focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2"
+          class="py-21 text-secondary transition-transform duration-200 hover:scale-105 focus-within:ring-secondary group relative grid h-[340px] w-full cursor-pointer place-items-center rounded-xl border-2 border-dashed border-zinc-400 bg-white px-16 font-medium text-gray-700 transition-all focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2"
         >
           <div>
             <svg
@@ -82,9 +82,7 @@
           <h6 class="text-secondary font-bold">Turn On Augmentation:</h6>
           <p>
             Activating data augmentation enhances and diversifies your image,
-            increasing data variety for comprehensive exploration. Turn Off
-            Augmentation: Deactivating data augmentation leaves your content
-            unaltered, analyzing raw data for a direct evaluation.
+            increasing data variety for comprehensive exploration. 
           </p>
           <h6 class="text-secondary font-bold">Turn Off Augmentation:</h6>
           <p>
@@ -151,3 +149,19 @@
     </form>
   </div>
 </section>
+
+<style>
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    #data-aug-button, #result-options-container {
+      margin-bottom: 200px;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    #upload-next, #upload-again-btn {
+      margin-top: -340px;
+    }
+  }
+
+
+</style>

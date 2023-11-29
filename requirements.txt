@@ -4,3 +4,4 @@ pillow
 ultralytics
 Flask-WTF
 mathplotlib
+flask_mail
