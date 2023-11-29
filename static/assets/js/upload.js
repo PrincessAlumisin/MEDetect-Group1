@@ -105,10 +105,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
     fullImagePopup.classList.remove("hidden");
   });
 
+    // Create close button 'X' for the full image popup
+  const closeButton = document.createElement("button");
+  closeButton.textContent = "X";
+  closeButton.classList.add("absolute", "top-4", "right-4", "text-white", "text-lg", "font-bold", "cursor-pointer", "z-100");
+  fullImagePopup.appendChild(closeButton);
+
+  // Function to close the full image popup
+  function closeFullImagePopup() {
+    fullImagePopup.classList.add("hidden");
+  }
+
+  // Event listeners for closing the full image popup
+  closeButton.addEventListener("click", closeFullImagePopup);
+
   fullImagePopup.addEventListener("click", function (event) {
-    if (event.target === fullImagePopup) {
+    if (event.target === fullImagePopup || event.target === fullImage) {
       fullImagePopup.classList.add("hidden");
     }
+    closeFullImagePopup();
   });
 
 });

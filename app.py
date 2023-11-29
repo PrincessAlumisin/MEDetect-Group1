@@ -9,7 +9,7 @@ from config import mail_username, mail_password
 #app configs
 app = Flask(__name__)   
 app.config['SECRET_KEY'] = os.urandom(24)
-app.config['UPLOAD_FOLDER'] = 'static/assets/files'
+app.config['UPLOAD_FOLDER'] = 'static/files'
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True

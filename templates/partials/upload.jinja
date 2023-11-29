@@ -8,8 +8,7 @@
   class="grid h-max lg:h-[calc(100vh-64px)] scroll-mt-[64px] place-items-center"
   style="
     background: url(&quot;static/assets/images/bg/upload-section-bg.webp&quot;)
-      center center no-repeat;
-  "
+      center center no-repeat;"
 >
   <div
     id="upload-container"
@@ -163,5 +162,14 @@
     }
   }
 
-
 </style>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+      // Add an event listener to the form submission
+      document.getElementById('upload-form').addEventListener('submit', function (e) {
+          // Clear the file input after submission
+          document.getElementById('image').value = '';
+      });
+  });
+</script>
