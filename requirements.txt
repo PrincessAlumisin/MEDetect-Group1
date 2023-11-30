@@ -1,5 +1,4 @@
 Flask
-opencv-python
 pillow
 ultralytics
 Flask-WTF
