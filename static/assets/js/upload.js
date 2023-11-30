@@ -10,16 +10,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const uploadAgainBtn = document.querySelector("#upload-again-btn");
   const spinner = document.querySelector("#spinner"); 
   const uploadText = document.querySelector("#upload-text");
-  fileUpload.addEventListener("change", function (event) {
+  
+  function isImage(file) {
+    const validImageFormats = ["image/jpeg", "image/jpg", "image/png"];
+    return validImageFormats.includes(file.type);
+   }
+   
+   fileUpload.addEventListener("change", function (event) {
     const file = event.target.files?.[0];
     if (file) {
-      imagePreview.src = URL.createObjectURL(file);
-      imagePreviewContainer.classList.remove("hidden");
-      imagePreview.classList.add("cursor-pointer");
-      imageInputContainer.classList.add("hidden");
-      submit.classList.remove("hidden");
+       if (!isImage(file)) {
+         alert("Please select an image file");
+         return;
+       }
+       imagePreview.src = URL.createObjectURL(file);
+       imagePreviewContainer.classList.remove("hidden");
+       imagePreview.classList.add("cursor-pointer");
+       imageInputContainer.classList.add("hidden");
+       submit.classList.remove("hidden");
     }
-  });
+   });
 
   imagePreview.addEventListener("click", function (event) {
     fileUpload.click();
